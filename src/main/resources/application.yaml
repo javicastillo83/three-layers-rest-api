@@ -1,3 +1,26 @@
 spring:
   application:
     name: rest-api
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          batch_size: 10
+        order_inserts: true
+        order_updates: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/rest_api_db
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+logging:
+  level:
+    root: INFO
+    com.carusato.restapi: DEBUG
+  pattern:
+    console: "[%d{HH:mm:ss.SSS}] %logger{0} - %msg%n"
